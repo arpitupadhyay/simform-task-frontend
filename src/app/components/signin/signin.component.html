@@ -1,0 +1,33 @@
+<div *ngIf="!loading" class="container card m-2 p-2 justify-content-center">
+    <h1 class="text-center">Login</h1>
+    <form>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Enter email" required [(ngModel)]="formInfo.email" name="email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required
+                [(ngModel)]="formInfo.password" name="password">
+        </div>
+
+        <br>
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary" (click)="login()">Submit</button>
+        </div>
+
+        <br>
+
+        <label class="form-text text-muted d-flex justify-content-center">Don't have an account?
+            <a (click)="signUp()" class="card-link">Sign Up Here
+            </a>
+        </label>
+        <br>
+    </form>
+</div>
+
+<div *ngIf="loading" class="text-center loader">
+</div>

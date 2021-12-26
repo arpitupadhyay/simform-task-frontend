@@ -1,0 +1,44 @@
+<div *ngIf="!loading" class="container card m-2 p-2 justify-content-center">
+    <h1 class="text-center">Update Profile</h1>
+    <form>
+
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="email" class="form-control" id="firstName" aria-describedby="firstNameHelp" required
+                [(ngModel)]="api.userInfo.firstName" name="firstName">
+        </div>
+
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="email" class="form-control" id="lastName" aria-describedby="lastNameHelp" required
+                [(ngModel)]="api.userInfo.lastName" name="lastName">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required
+                [(ngModel)]="api.userInfo.email" name="email">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" required
+                [(ngModel)]="api.userInfo.password" name="password">
+        </div>
+
+        <small id="emailHelp" class="form-text text-muted">You can't see your current password (Empty form field), you
+            can
+            update it by filling up the password field.</small>
+
+        <br>
+        <br>
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary" (click)="updateProfile()">Update Profile</button>
+        </div>
+
+        <br>
+    </form>
+</div>
+
+<div *ngIf="loading" class="text-center loader">
+</div>

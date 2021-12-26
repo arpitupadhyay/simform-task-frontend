@@ -1,0 +1,19 @@
+<div *ngIf="!loading" class="card container card m-2 p-2 justify-content-center" style="width: 18rem;">
+    <ng-container *ngIf="api.userInfo.picture == ''">
+        <img class="card-img-top userImage" src='../../../assets/images/user.png' alt="User Image">
+    </ng-container>
+    <img class="card-img-top" *ngIf="api.userInfo.picture != ''" :src={{api.userInfo.picture}} alt="User Image">
+    <div class="card-body">
+        <h5 class="card-title">Hi, {{api.userInfo.firstName}} {{api.userInfo.lastName}}</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{api.userInfo.email}}</li>
+    </ul>
+    <div class="card-body">
+        <a (click)="myProfile()" class="card-link">My Profile</a>
+        <a (click)="logOut()" class="card-link">Logout</a>
+    </div>
+</div>
+
+<div *ngIf="loading" class="text-center loader">
+</div>
